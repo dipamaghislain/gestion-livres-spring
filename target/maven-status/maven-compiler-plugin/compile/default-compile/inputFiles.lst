@@ -1,9 +1,0 @@
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\config\DataInitializer.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\controller\BookController.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\entity\Book.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\exception\GlobalExceptionHandler.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\exception\ResourceNotFoundException.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\GestionLivresApplication.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\repository\BookRepository.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\service\BookService.java
-C:\Users\lenovo\Desktop\IC3\spring-boot\gestion-livres\src\main\java\com\gestion_livres\service\impl\BookServiceImpl.java
