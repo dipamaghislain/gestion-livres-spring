@@ -1,0 +1,10 @@
+com\gestion_livres\repository\BookRepository.class
+com\gestion_livres\service\BookService.class
+com\gestion_livres\config\DataInitializer.class
+com\gestion_livres\exception\GlobalExceptionHandler.class
+com\gestion_livres\controller\BookWebController.class
+com\gestion_livres\exception\ResourceNotFoundException.class
+com\gestion_livres\service\impl\BookServiceImpl.class
+com\gestion_livres\entity\Book.class
+com\gestion_livres\controller\BookController.class
+com\gestion_livres\GestionLivresApplication.class

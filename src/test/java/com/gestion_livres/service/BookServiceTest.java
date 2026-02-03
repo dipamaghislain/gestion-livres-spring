@@ -10,6 +10,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -26,6 +31,22 @@ class BookServiceTest {
 
     @InjectMocks
     private BookServiceImpl bookService;
+
+    @Test
+    void shouldReturnPagedBooks() {
+        Book book1 = new Book("Titre 1", "Auteur 1", 20.0);
+        Book book2 = new Book("Titre 2", "Auteur 2", 30.0);
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<Book> bookPage = new PageImpl<>(Arrays.asList(book1, book2));
+        
+        when(bookRepository.findAll(pageable)).thenReturn(bookPage);
+
+        Page<Book> result = bookService.getBooks(pageable);
+
+        assertEquals(2, result.getContent().size());
+        verify(bookRepository, times(1)).findAll(pageable);
+    }
+
 
     @Test
     void shouldReturnAllBooks() {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title th:text="${formTitle}">Formulaire livre</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1 th:text="${formTitle}">Formulaire livre</h1>
+        <a class="btn btn-secondary" th:href="@{/books}">Retour</a>
+    </header>
+
+    <form th:action="${action}" th:object="${book}" method="post" class="form">
+        <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre" th:field="*{titre}" placeholder="Titre" />
+            <div class="error" th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="auteur">Auteur</label>
+            <input type="text" id="auteur" th:field="*{auteur}" placeholder="Auteur" />
+            <div class="error" th:if="${#fields.hasErrors('auteur')}" th:errors="*{auteur}"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="prix">Prix</label>
+            <input type="number" id="prix" th:field="*{prix}" step="0.01" min="0" placeholder="Prix" />
+            <div class="error" th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}"></div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

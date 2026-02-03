@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestion des livres</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Gestion des livres</h1>
+        <a class="btn btn-primary" th:href="@{/books/new}">Ajouter un livre</a>
+    </header>
+
+    <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.titre}"></td>
+            <td th:text="${book.auteur}"></td>
+            <td th:text="${#numbers.formatDecimal(book.prix, 1, 'COMMA', 2, 'POINT')} + ' €'"></td>
+            <td class="actions">
+                <a class="btn btn-secondary" th:href="@{/books/{id}/edit(id=${book.id})}">Modifier</a>
+                <form th:action="@{/books/{id}/delete(id=${book.id})}" method="post" class="inline">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Supprimer ce livre ?')">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(books)}">
+            <td colspan="5" class="empty">Aucun livre trouvé.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

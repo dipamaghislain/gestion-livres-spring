@@ -1,0 +1,3 @@
+com\gestion_livres\service\BookServiceTest.class
+com\gestion_livres\controller\BookControllerTest.class
+com\gestion_livres\GestionLivresApplicationTests.class

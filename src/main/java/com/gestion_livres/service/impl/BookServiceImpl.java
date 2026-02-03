@@ -4,6 +4,8 @@ import com.gestion_livres.entity.Book;
 import com.gestion_livres.exception.ResourceNotFoundException;
 import com.gestion_livres.repository.BookRepository;
 import com.gestion_livres.service.BookService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +22,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
+    }
+
+    @Override
+    public Page<Book> getBooks(Pageable pageable) {
+        return bookRepository.findAll(pageable);
     }
 
     @Override

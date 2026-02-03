@@ -2,6 +2,9 @@ package com.gestion_livres.controller;
 
 import com.gestion_livres.entity.Book;
 import com.gestion_livres.service.BookService;
+import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +22,10 @@ public class BookController {
     }
 
 
+    // Exemple d'appel : GET /api/books?page=0&size=5&sort=titre,asc
     @GetMapping
-    public ResponseEntity<List<Book>> getAllBooks() {
-        return ResponseEntity.ok(bookService.getAllBooks());
+    public ResponseEntity<Page<Book>> getAllBooks(Pageable pageable) {
+        return ResponseEntity.ok(bookService.getBooks(pageable));
     }
 
 
@@ -32,7 +36,7 @@ public class BookController {
 
 
     @PostMapping
-    public ResponseEntity<Book> createBook(@RequestBody Book book) {
+    public ResponseEntity<Book> createBook(@Valid @RequestBody Book book) {
         Book savedBook = bookService.saveBook(book);
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
@@ -41,7 +45,7 @@ public class BookController {
     @PutMapping("/{id}")
     public ResponseEntity<Book> updateBook(
             @PathVariable Long id,
-            @RequestBody Book book) {
+            @Valid @RequestBody Book book) {
         return ResponseEntity.ok(bookService.updateBook(id, book));
     }
 

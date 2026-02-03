@@ -1,0 +1,10 @@
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\config\DataInitializer.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\controller\BookController.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\controller\BookWebController.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\entity\Book.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\exception\GlobalExceptionHandler.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\exception\ResourceNotFoundException.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\GestionLivresApplication.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\repository\BookRepository.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\service\BookService.java
+C:\Users\HP Laptop 15s\Pictures\brice\Spring\gestion-livres-spring\src\main\java\com\gestion_livres\service\impl\BookServiceImpl.java
